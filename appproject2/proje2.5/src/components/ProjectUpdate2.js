@@ -1,19 +1,24 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
 import { updateProject } from "../store/reducers/ProjectFormReducer";
 
 function ProjectUpdate2() {
-  const { id } = useParams;
+  const { id } = useParams();
   const projects = useSelector((state) => state.projects);
-  const existingProject = projects.filter((projects) => projects.id === id);
+  const existingProject = projects.filter((project) => Number(project.id) === Number(id));
   // const existingProject = projects.map((projects) => {
   //   return projects.id === id;
   // });
-  const { title, description, price } = existingProject[0];
+  let title, description, price;
+  console.log({ projects, existingProject, id })
+
+  if (existingProject && existingProject[0]) {
+    title = existingProject[0].title;
+    description = existingProject[0].description;
+    price = existingProject[0].price
+
+  }
   const [updatedTitle, setTitle] = useState(title);
   const [updatedDescription, setDescription] = useState(description);
   const [updatedPrice, setPrice] = useState(price);

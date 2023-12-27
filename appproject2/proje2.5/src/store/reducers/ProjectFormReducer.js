@@ -6,22 +6,25 @@ const formSlice = createSlice({
   initialState: projectList,
   reducers: {
 
-    addProject(state,action) {
+    addProject(state, action) {
       state.push(action.payload)
     },
-    updateProject: (state,action) =>{
-      const {id,image,title,description,price}= action.payload;
-      const updatedProject = state.find(project =>project.id === id)
-      if (updatedProject) {
-        updatedProject.image = image;
-        updatedProject.title =title;
-        updateProject.description = description;
-        updateProject.price = price;
-      }
+    updateProject: (state, action) => {
+      const { id, image, title, description, price } = action.payload;
+      state = state.map(project => {
+        if (Number(project.id) === Number(id))  {
+          project.image = image;
+          project.title = title;
+          project.description = description;
+          project.price = price;
+        }
+        return project
+      })
+     
     },
   },
 });
 
-export const { addProject, updateProject} =
+export const { addProject, updateProject } =
   formSlice.actions;
 export default formSlice.reducer;
