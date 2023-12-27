@@ -1,0 +1,99 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.p-create {
+  width: 450px;
+}
+
+.p-update {
+  width: 100%;
+}
+
+.p-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.p-label {
+  margin: 10px 0px;
+}
+
+.p-input {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.p-button {
+  border: 1px solid green;
+  margin: 10px 0px;
+  padding: 10px;
+  background-color: green;
+  color: white;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.p-update-button {
+  background-color: blueviolet;
+}
+
+.p-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.p-ıtem {
+  border: 1px solid green;
+  border-radius: 30px;
+  width: 350px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.p-title {
+  margin-bottom: 5px;
+}
+
+.p-edit {
+  padding: 5px;
+  font-size: 15px;
+  width: 100px;
+  border: none;
+  border-radius: 30px;
+  background-color: blue;
+  color: white;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.p-delete {
+  padding: 5px;
+  font-size: 15px;
+  width: 60px;
+  border: none;
+  border-radius: 30px;
+  background-color: red;
+  color: white;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.p-more {
+  padding: 5px;
+  font-size: 15px;
+  width: 100px;
+  border: none;
+  border-radius: 30px;
+  background-color: rgb(31, 158, 39);
+  color: white;
+  margin-right: 10px;
+  cursor: pointer;
+}
